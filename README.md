@@ -1,3 +1,6 @@
+workflow:
+  feature -> staging -> master
+
 TODO:
   - add logging/reporting
   - add circle ci and delpoy to aws
