@@ -7,10 +7,8 @@
   "license": "MIT",
   "private": false,
   "scripts": {
-    "start": "webpack",
     "lint": "node_modules/.bin/eslint src",
-    "dev": "npx nodemon -w src/ -e js,scss -x \"rm -rf lib; mkdir lib; webpack --env dev && webpack --env build",
-    "dev-test": "npx nodemon -w src/ -e js,scss -x",
+    "dev": "webpack-dev-server --hot",
     "build": "webpack --env dev && webpack --env build && yarn test",
     "test": "mocha --require @babel/register --colors ./test/*.spec.js",
     "test:watch": "mocha --require @babel/register --colors -w ./test/*.spec.js",
@@ -28,7 +26,7 @@
   },
   "dependencies": {
     "@babel/runtime": "^7.4.3",
-    "@hot-loader/react-dom": "16.8.6",
+    "@hot-loader/react-dom": "^16.8.6",
     "axios": "^0.18.0",
     "lodash": "^4.17.11",
     "mobx": "^5.9.4",

@@ -1,6 +1,7 @@
 const path = require('path');
 const yargs = require('yargs'); // use --env with webpack 2
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
+const HtmlWebPackPlugin = require('html-webpack-plugin');
 const webpack = require('webpack');
 const pkg = require('./package.json');
 
@@ -96,6 +97,15 @@ const config = {
         exclude: /node_modules/,
         loader: 'eslint-loader',
       },
+      {
+        test: /\.html$/,
+        use: [
+          {
+            loader: 'html-loader',
+            options: { minimize: true },
+          },
+        ],
+      },
     ],
   },
   plugins: [
@@ -104,6 +114,12 @@ const config = {
       chunkFilename: isDevelopment ? '[id].css' : '[id].[hash].css',
     }),
     new webpack.HotModuleReplacementPlugin(),
+    new HtmlWebPackPlugin({
+      template: './public/index.html',
+      filename: './index.html',
+      favicon: './public/favicon.ico',
+      manifest: './public.manifest.json',
+    }),
   ],
   resolve: {
     modules: ['node_modules'],
