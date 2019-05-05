@@ -1,7 +1,9 @@
 const path = require('path');
 const yargs = require('yargs'); // use --env with webpack 2
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
+const webpack = require('webpack');
 const pkg = require('./package.json');
+
 
 const {
   argv: { env },
@@ -27,9 +29,13 @@ const config = {
   mode,
   entry: `${__dirname}/src/index.js`,
   devtool: 'inline-source-map',
+  devServer: {
+    contentBase: './lib',
+    hot: true,
+  },
   output: {
-    path: `${__dirname}/lib`,
     filename: outputFile,
+    path: path.resolve(`${__dirname}/lib`),
     library: libraryName,
     libraryTarget: 'umd',
     umdNamedDefine: true,
@@ -97,15 +103,13 @@ const config = {
       filename: isDevelopment ? '[name].css' : '[name].[hash].css',
       chunkFilename: isDevelopment ? '[id].css' : '[id].[hash].css',
     }),
+    new webpack.HotModuleReplacementPlugin(),
   ],
   resolve: {
     modules: ['node_modules'],
     extensions: ['.json', '.js', '.jsx', '.scss'],
     alias: {
-      react: path.resolve(path.join(__dirname, './node_modules/react')),
-      'react-dom': path.resolve(
-        path.join(__dirname, './node_modules/react-dom'),
-      ),
+      'react-dom': '@hot-loader/react-dom',
     },
   },
 };
