@@ -1,7 +1,7 @@
 {
-  "name": "app",
+  "name": "gradwohl",
   "version": "0.0.01",
-  "description": "starter client application",
+  "description": "builds a client application to public/index.html and exports a component library to lib/gradwohl.min.js",
   "main": "lib/app.js",
   "author": "Chris Gradwohl <christophergradwohl@gmail.com>",
   "license": "MIT",
