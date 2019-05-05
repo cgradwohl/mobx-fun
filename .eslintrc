@@ -1,0 +1,42 @@
+{
+  "env": {
+    "browser": true,
+    "es6": true,
+    "node": true
+  },
+  "globals": {
+    "document": false,
+    "escape": false,
+    "navigator": false,
+    "unescape": false,
+    "window": false,
+    "describe": true,
+    "before": true,
+    "it": true,
+    "expect": true,
+    "sinon": true
+  },
+  "parser": "babel-eslint",
+  "plugins": ["react", "react-hooks"],
+  "extends": ["airbnb"],
+  "parserOptions": {
+    "sourceType": "module",
+    "ecmaVersion": 2018
+  },
+  "rules": {
+    "no-unneeded-ternary": 0,
+    "jsx-a11y/no-noninteractive-element-interactions": false,
+    "jsx-a11y/click-events-have-key-events": false,
+    "jsx-a11y/no-static-element-interactions": false,
+    "react-hooks/exhaustive-deps": "warn",
+    "react-hooks/rules-of-hooks": "error",
+    "react/jsx-filename-extension": [
+      1,
+      {
+        "extensions": [".js", ".jsx"]
+      }
+    ],
+    "no-param-reassign": 0,
+    "react/prop-types": 0
+  }
+}
