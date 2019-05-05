@@ -1,8 +1,8 @@
 {
-  "name": "gradwohl",
+  "name": "mobx-fun",
   "version": "0.0.01",
   "description": "builds a client application to public/index.html and exports a component library to lib/gradwohl.min.js",
-  "main": "lib/app.js",
+  "main": "src/index.js",
   "author": "Chris Gradwohl <christophergradwohl@gmail.com>",
   "license": "MIT",
   "private": false,
