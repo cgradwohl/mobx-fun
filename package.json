@@ -8,8 +8,8 @@
   "private": false,
   "scripts": {
     "lint": "node_modules/.bin/eslint src",
-    "dev": "npx nodemon -w src/ -e js,scss -x \"rm -rf lib; mkdir lib; webpack --env dev && webpack --env build && cp lib/app.js $DEST_PATH\"",
-    "dev-test": "npx nodemon -w src/ -e js,scss -x \"rm -rf lib; mkdir lib; yarn run build && cp lib/app.js $DEST_PATH\"",
+    "dev": "npx nodemon -w src/ -e js,scss -x \"rm -rf lib; mkdir lib; webpack --env dev && webpack --env build",
+    "dev-test": "npx nodemon -w src/ -e js,scss -x",
     "build": "webpack --env dev && webpack --env build && yarn test",
     "test": "mocha --require @babel/register --colors ./test/*.spec.js",
     "test:watch": "mocha --require @babel/register --colors -w ./test/*.spec.js",
