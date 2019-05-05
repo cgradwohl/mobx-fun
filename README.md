@@ -1,3 +1,9 @@
+TODO:
+  - add logging/reporting
+  - add circle ci and delpoy to aws
+  - add testing for components, services, store
+  - add test coverage
+
 
 For automatic node versioning, add this to your .zshrc
 ```
